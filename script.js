@@ -20,8 +20,14 @@ function generatePassword() {
     possible += lower ;
   }
 
-  debugger;
+  for (var i=0; i < characters; i ++) {
+    var random = Math.floor(Math.random(generatePassword) * possible.length)
+    console.log(random)
+  }
 
+
+
+  
   return '';
 }
 
