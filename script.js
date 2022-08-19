@@ -5,7 +5,7 @@ function generatePassword() {
   var lower = 'abcdefghijklmnopqrstuvwxyz'
   var upper = lower.toUpperCase();
   var numbers = '0123456789'
-  var special = '"#$%&'()*+-./:;<=>?@[]^_';
+  var special = '"#$%&\'()*+,-./:;<=>?@[\]^_`{|}~'
   var possible = '';
   var password = '';
 
@@ -13,8 +13,12 @@ function generatePassword() {
 
   var hasLower = confirm('Has lowercase letter?')
   var hasUpper = confirm('Has upper case letters?')
+  var hasnumbers = confirm('Has numbers?')
+  var hasspecial = confirm('Has special characters?')
   
-
+  if (hasLower) {
+    possible += lower ;
+  }
 
   debugger;
 
