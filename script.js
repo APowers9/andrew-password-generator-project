@@ -11,25 +11,38 @@ function generatePassword() {
 
   var characters = 12;
 
-  var hasLower = confirm('Has lowercase letter?')
-  var hasUpper = confirm('Has upper case letters?')
-  var hasnumbers = confirm('Has numbers?')
-  var hasspecial = confirm('Has special characters?')
-  
-  if (hasLower) {
-    possible += lower ;
+  var hasLower = confirm('Has lowercase letter?');
+  var hasUpper = confirm('Has upper case letters?');
+  var hasNumbers = confirm('Has numbers?');
+  var hasSpecial = confirm('Has special characters?');
+  var input = prompt('How long would you like your password to be (8-128)')
+
+  if (hasLower === true) {
+    possible += lower
   }
+  if (hasUpper === true) {
+    possible += upper
+  }
+  if (hasNumbers === true) {
+    possible += numbers
+  }
+  if (hasSpecial === true) {
+    possible += special
+  }
+
+
 
   for (var i=0; i < characters; i ++) {
     var random = Math.floor(Math.random(generatePassword) * possible.length)
     console.log(random)
-  }
+    password += possible[random];
+  };
 
+  debugger;
 
-
-  
   return '';
 }
+
 
 // Write password to the #password input
 function writePassword() {
